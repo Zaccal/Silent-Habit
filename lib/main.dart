@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'components/header.dart';
+import 'package:silent_habit/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,18 +15,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Silent Habit')),
-      body: const Center(child: Header()),
     );
   }
 }
