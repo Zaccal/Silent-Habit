@@ -11,6 +11,7 @@ import (
 func main() {
 	http.HandleFunc("/healthCheck", hander.HealthCheckHandler)
 	http.HandleFunc("/habits", hander.HabitHandlers)
+	http.HandleFunc("/habit/", hander.HabitGetByIDHandler)
 
 	fmt.Println("Server is running at http://localhost:8080")
 

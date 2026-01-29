@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:silent_habit/pages/notifications.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key, required this.dayNumber});
@@ -28,22 +27,6 @@ class Header extends StatelessWidget {
                 ],
               ),
             ],
-          ),
-
-          IconButton(
-            icon: Icon(Icons.notifications_outlined),
-            color: Colors.black,
-            style: IconButton.styleFrom(
-              backgroundColor: Colors.white,
-              shape: const CircleBorder(),
-            ),
-            iconSize: 28,
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationsPage()),
-              );
-            },
           ),
         ],
       ),
