@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       backgroundColor: HexColor('#F6F0D7'),
-      // Only ONE Scaffold at the top level
       body: Column(
         children: [
           Header(dayNumber: 3),
@@ -69,7 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
               }).toList(),
             ),
           ),
-          // FIX: Wrap the FutureBuilder area in Expanded
           Expanded(
             child: FutureBuilder<List<Habit>>(
               future: _habitsFuture,
@@ -89,12 +87,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
 
                   return ListView.builder(
-                    // Important: Add padding so the last item isn't hidden by the FAB
                     padding: const EdgeInsets.only(bottom: 80),
                     itemCount: habits.length,
                     itemBuilder: (context, index) {
                       final habit = habits[index];
-                      return HabitWidget(habit: habit);
+                      return HabitWidget(
+                        habit: habit,
+                        api: _api,
+                        onDelete: _refreshHabits,
+                      );
                     },
                   );
                 }
