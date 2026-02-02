@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:silent_habit/pages/home.dart';
+import 'package:silent_habit/pages/sign-up.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         backgroundColor: Color(0xFFEDECE3),
-        body: const MyHomePage(),
+        body: const SignUpPage(),
       ),
     );
   }
