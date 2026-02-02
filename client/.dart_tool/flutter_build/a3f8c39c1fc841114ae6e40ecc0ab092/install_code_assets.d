@@ -1,0 +1,1 @@
+ /home/adil/Документы/collage-projects/Silent-Habit/.dart_tool/flutter_build/a3f8c39c1fc841114ae6e40ecc0ab092/native_assets.json: 

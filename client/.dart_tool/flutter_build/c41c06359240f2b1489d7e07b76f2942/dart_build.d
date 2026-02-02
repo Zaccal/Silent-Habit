@@ -1,0 +1,1 @@
+ /home/adil/Документы/collage-projects/Silent-Habit/.dart_tool/flutter_build/c41c06359240f2b1489d7e07b76f2942/dart_build_result.json:  /home/adil/Документы/collage-projects/Silent-Habit/.dart_tool/package_config.json /home/adil/Документы/collage-projects/Silent-Habit/pubspec.yaml /home/adil/.flutter/flutter/bin/cache/dart-sdk/version
