@@ -4,7 +4,8 @@ import 'package:silent_habit/models/habit.dart';
 
 class EditHabitPage extends StatefulWidget {
   final Habit habit;
-  const EditHabitPage({super.key, required this.habit});
+  final Function(Habit) onUpdate;
+  const EditHabitPage({super.key, required this.habit, required this.onUpdate});
 
   @override
   State<EditHabitPage> createState() => _EditHabitPageState();
@@ -33,6 +34,15 @@ class _EditHabitPageState extends State<EditHabitPage> {
   Future<void> _submitData() async {
     setState(() => _isUpdating = true);
     setState(() => _isUpdating = false);
+
+    final updatedHabit = Habit(
+      id: widget.habit.id,
+      name: _nameController.text,
+      description: _descController.text,
+    );
+
+    await _api.updateHabit(updatedHabit);
+    await widget.onUpdate(updatedHabit);
 
     if (mounted) Navigator.pop(context, true);
   }

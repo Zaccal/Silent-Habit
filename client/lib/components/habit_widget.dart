@@ -28,7 +28,14 @@ class HabitWidget extends StatelessWidget {
             TextButton(
               onPressed: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const EditHabitPage()),
+                MaterialPageRoute(
+                  builder: (context) => EditHabitPage(
+                    habit: habit,
+                    onUpdate: (updatedHabit) {
+                      onDelete();
+                    },
+                  ),
+                ),
               ),
               child: const Text('Cancel'),
             ),
@@ -94,7 +101,10 @@ class HabitWidget extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const EditHabitPage(),
+                    builder: (context) => EditHabitPage(
+                      habit: habit,
+                      onUpdate: (updatedHabit) => onDelete(),
+                    ),
                   ),
                 );
               }
